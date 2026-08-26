@@ -33,8 +33,8 @@ Un usuario de un consultorio jurídico universitario
 ### 1.3 Qué hace y qué NO hace (alcance)
 | ✅ Sí hace | ❌ No hace |
 | --- | --- |
-| [funcionalidad] | [No emite juicios de valor ni asesoría jurídica: No evalúa si la decisión del juez fue "justa" o "injusta" ni asesora sobre estrategias litigiosas complejas.] |
-| [funcionalidad 2] | [fuera de alcance 2] |
+| [Identifica el resultado central del fallo: Indica de forma directa si el amparo fue concedido, negado, declarado improcedente o si hubo hecho superado.] | [No emite juicios de valor ni asesoría jurídica: No evalúa si la decisión del juez fue "justa" o "injusta" ni asesora sobre estrategias litigiosas complejas.] |
+| [Extrae órdenes y plazos en un checklist: Convierte el resuelve en una lista clara de quién debe hacer qué y en cuántas horas/días hábiles.] | [No redacta recursos procesales de fondo: No elabora apelaciones complejas, demandas de casación ni tutelas contra providencia judicial.] |
 
 *Consejo de abogado: un alcance pequeño y perfecto vale más que uno grande y roto.*
 
@@ -46,6 +46,8 @@ Un usuario de un consultorio jurídico universitario
 ### 1.5 Nombre y lema
 Un nombre corto para tu herramienta y una frase que explique qué hace (la usarás en la demo del día de presentaciones).
 
+Nombre: SentenciaClara
+Lema: Tu sentencia en español cotidiano: entiende qué ganaste, qué ordenó el juez y qué paso debes dar hoy.
 ---
 
 ## 🗺️ Parte 2 — Plan de desarrollo
