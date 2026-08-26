@@ -40,8 +40,8 @@ Un usuario de un consultorio jurídico universitario
 
 ### 1.4 Marco jurídico y fuentes
 ¿Qué normas alimentan tu herramienta? Lista tu corpus normativo (leyes, decretos, sentencias — debe ser **pequeño y público**):
-- [ ] Norma/sentencia 1: [nombre + enlace]
-- [ ] Norma/sentencia 2: [nombre + enlace]
+- [ ] Norma/sentencia 1: [Directrices y principios de comunicación pública transparente y simplificada para la ciudadanía. https://www.dnp.gov.co]
+- [ ] Norma/sentencia 2: [Sentencia T-262 de 2022 (Corte Constitucional): Jurisprudencia hito sobre el deber de los jueces de emitir providencias en lenguaje claro, accesible y con enfoque diferencial para garantizar la comprensión material de las decisiones. https://www.corteconstitucional.gov.co/relatoria/2022/T-262-22.htm]
 
 ### 1.5 Nombre y lema
 Un nombre corto para tu herramienta y una frase que explique qué hace (la usarás en la demo del día de presentaciones).
