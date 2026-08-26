@@ -2,9 +2,9 @@
 
 **Pontificia Universidad Javeriana · 2026-II · Docente: Pedro Ardila**
 
-> **Estudiante:** [escribe aquí tu nombre completo]
-> **Nombre del proyecto:** [escribe aquí el nombre de tu herramienta]
-> **Fecha de inicio:** [AAAA-MM-DD]
+> **Estudiante:** [María Fernanda Motato Quintero]
+> **Nombre del proyecto:** [SentenciaClara]|
+> **Fecha de inicio:** [2026-08-26]
 
 ---
 
@@ -23,13 +23,17 @@ Bienvenido/a a tu repositorio de proyecto. **Este archivo es tu tablero de mando
 ### 1.1 El problema jurídico
 ¿Qué problema **real del derecho colombiano** resuelve tu herramienta? ¿Quién lo sufre hoy y cómo lo resuelve sin tu herramienta?
 
+La brecha de barrera cognitiva en el acceso a la administración de justicia. Las sentencias judiciales en Colombia (especialmente en acciones de tutela y fallos de primera instancia suelen tener entre 15 y 40 páginas redactadas en un lenguaje procesal farragoso, cargado de latinismos, citas doctrinales abstractas y fórmulas sacramentales. Esto impide que el ciudadano entienda el fondo del asunto: si ganó o perdió, qué ordenó exactamente el juez y qué plazos fatales tiene para actuar.
+
 ### 1.2 Usuarios
 ¿Quién va a usarla? Describe a tu usuario ideal en una frase (ej. *"un arrendatario bogotano que le subieron el canon de arrendamiento más del límite legal"*). Recuerda que al final necesitas **al menos un usuario real** que la pruebe.
+
+Un usuario de un consultorio jurídico universitario
 
 ### 1.3 Qué hace y qué NO hace (alcance)
 | ✅ Sí hace | ❌ No hace |
 | --- | --- |
-| [funcionalidad 1] | [fuera de alcance 1] |
+| [funcionalidad] | [No emite juicios de valor ni asesoría jurídica: No evalúa si la decisión del juez fue "justa" o "injusta" ni asesora sobre estrategias litigiosas complejas.] |
 | [funcionalidad 2] | [fuera de alcance 2] |
 
 *Consejo de abogado: un alcance pequeño y perfecto vale más que uno grande y roto.*
