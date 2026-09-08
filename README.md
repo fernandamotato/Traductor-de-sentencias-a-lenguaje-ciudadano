@@ -96,7 +96,7 @@ Pídele a tu agente de IA que te explique esta arquitectura con tu proyecto conc
 
 ## 🚀 Parte 4 — Ruta de despliegue
 
-Tu meta: **una URL pública** que cualquiera pueda abrir. Elige una ruta:
+- [x] **M4 — Interfaz web desplegada** *(Sesión 4)*: tu herramienta tiene **URL pública**: https://fernandamotato.github.io/Traductor-de-sentencias-a-lenguaje-ciudadano/
 
 ### Opción A — Vercel ⭐ (recomendada, la del curso)
 1. Sube tu código a este repo de GitHub (ya lo tienes ✅).
@@ -114,10 +114,10 @@ Si necesitas algo que Vercel no ofrece (ej. procesos de fondo, bases de datos pe
 - **Docker local:** tu agente puede escribir un `Dockerfile` para que el proyecto corra igual en cualquier máquina. Útil para demostraciones sin internet, pero **no cumple el requisito de URL pública** — combínalo con A o B.
 
 ### Checklist de despliegue ✅
-- [ ] URL pública funciona en el navegador de otra persona (pídele a alguien que la abra)
-- [ ] La advertencia de la Parte 7 es **visible** en la interfaz
-- [ ] No hay API keys ni secretos en el código (verifica con una búsqueda de `sk-` en el repo)
-- [ ] Anota la URL aquí: **`[tu-url-publica]`**
+- [x] URL pública funciona en el navegador de otra persona (verificada en celular y computador)
+- [x] La advertencia de la Parte 6 y 7 es **visible** en la interfaz
+- [x] No hay API keys ni secretos en el código
+- [x] Anota la URL aquí: **https://fernandamotato.github.io/Traductor-de-sentencias-a-lenguaje-ciudadano/**
 
 > El dominio propio (.com, .co) **no es necesario** — la URL gratuita de Vercel/Render es suficiente para el curso.
 
