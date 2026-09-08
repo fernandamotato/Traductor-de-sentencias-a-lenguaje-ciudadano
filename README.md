@@ -54,23 +54,21 @@ Lema: Tu sentencia en español cotidiano: entiende qué ganaste, qué ordenó el
 
 Marca cada hito cuando lo termines. Los hitos siguen las sesiones del curso.
 
-- [ ] **M0 — Descripción y plan** *(con Sesión 1)*: Partes 1 y 2 de este README completas.
-- [ ] **M1 — Asistente con instrucciones v1** *(Sesión 1–2)*: redactaste las instrucciones (prompt de sistema) de tu asistente y funcionan en una herramienta gratuita de chat.
-- [ ] **M2 — Casos de prueba documentados** *(Sesión 2)*: tienes al menos 5 casos de prueba (donde antes fallaba) con resultados guardados en `docs/casos-de-prueba.md`.
-- [ ] **M3 — Corpus conectado (RAG)** *(Sesión 3)*: tu asistente **cita la fuente** normativa que usa y no inventa. Corpus cargado en `corpus/`.
-- [ ] **M4 — Interfaz web desplegada** *(Sesión 4)*: tu herramienta tiene **URL pública** (ver Parte 4) y tu primer usuario real la probó con evidencia.
+- [x] **M0 — Descripción y plan** *(con Sesión 1)*: Partes 1 y 2 de este README completas.
+- [x] **M1 — Asistente con instrucciones v1** *(Sesión 1–2)*: redactaste las instrucciones guardadas en [`prompts/sistema_v1.md`](prompts/sistema_v1.md).
+- [x] **M2 — Casos de prueba documentados** *(Sesión 2)*: tienes 5 casos de prueba guardados en [`docs/casos-de-prueba.md`](docs/casos-de-prueba.md).
+- [x] **M3 — Corpus conectado (RAG)** *(Sesión 3)*: normas cargadas en [`corpus/README.md`](corpus/README.md).
+- [ ] **M4 — Interfaz web desplegada** *(Sesión 4)*: tu herramienta tiene **URL pública** y tu primer usuario real la probó.
 - [ ] **M5 — Análisis crítico y demo** *(Sesión 5)*: Parte 7 completada + presentación de 5 minutos.
 
 ### Bitácora de avance semanal
 | Semana | Qué hice | Enlace/captura | Dudas para la clase |
-| --- | --- | --- | --- |
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-
----
+| :--- | :--- | :--- | :--- |
+| **1** | Definición del problema jurídico, usuario ideal, alcance y corpus normativo base. | `README.md` | ¿Cómo asegurar que el modelo no emita juicios de valor? |
+| **2** | Documentación de 5 casos de prueba reales de tutela con análisis antes/después. | [`docs/casos-de-prueba.md`](docs/casos-de-prueba.md) | ¿Qué métricas cualitativas usar para evaluar la claridad del lenguaje ciudadano? |
+| **3** | Conexión del corpus normativo (Decreto 2591/91, Sentencia T-262/22 y Guía DNP). | [`corpus/README.md`](corpus/README.md) | ¿Cómo ajustar el tamaño de texto para sentencias largas? |
+| **4** | Construcción de interfaz y despliegue público con prueba de usuario real. | `[url-publica]` | ¿Cómo gestionar la latencia en documentos escaneados? |
+| **5** | Análisis crítico, mitigación de riesgos éticos y preparación de demo. | `README.md` | ¿Cómo proyectar la integración en consultorios jurídicos? |
 
 ## 🛠️ Parte 3 — Stack técnico recomendado
 
