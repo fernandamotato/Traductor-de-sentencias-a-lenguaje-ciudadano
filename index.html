@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentenciaClara | Traductor de Sentencias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 min-h-screen py-10 px-4">
+    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8">
+        
+        <!-- Encabezado -->
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold text-blue-900 flex items-center justify-center gap-2">
+                <span>⚖️</span> SentenciaClara
+            </h1>
+            <p class="text-slate-600 text-sm mt-1">Tu sentencia judicial en español cotidiano · Pontificia Universidad Javeriana</p>
+        </div>
+
+        <!-- Advertencia Legal -->
+        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg mb-6">
+            <p class="text-xs text-amber-900 leading-relaxed">
+                ⚠️ <strong>Aviso Legal Obligatorio:</strong> Esta herramienta es un prototipo académico desarrollado en la clase de Derecho e IA. <strong>No constituye asesoría legal</strong> ni sustituye la consulta con un abogado o consultorio jurídico.
+            </p>
+        </div>
+
+        <!-- Botones de ejemplo rápido -->
+        <div class="mb-4">
+            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Prueba rápida con un ejemplo:</label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <button onclick="cargarEjemplo(1)" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 py-2 px-3 rounded-lg font-medium border border-slate-300 transition">🩺 Salud EPS</button>
+                <button onclick="cargarEjemplo(2)" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 py-2 px-3 rounded-lg font-medium border border-slate-300 transition">🏠 Arriendo</button>
+                <button onclick="cargarEjemplo(3)" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 py-2 px-3 rounded-lg font-medium border border-slate-300 transition">📦 Medicina Entregada</button>
+            </div>
+        </div>
+
+        <!-- Área de texto -->
+        <div class="mb-5">
+            <label class="block text-sm font-semibold text-slate-700 mb-1">Pega aquí el "Resuelve" de la sentencia:</label>
+            <textarea id="sentenciaInput" rows="4" class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm" placeholder="Ejemplo: PRIMERO: TUTELAR el derecho a la salud... ORDENAR a la EPS..."></textarea>
+        </div>
+
+        <!-- Botón de acción -->
+        <button onclick="traducirSentencia()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-xl shadow-md transition duration-200 flex items-center justify-center gap-2">
+            <span>✨</span> Traducir a Lenguaje Ciudadano
+        </button>
+
+        <!-- Resultados -->
+        <div id="resultadoContainer" class="hidden mt-8 pt-6 border-t border-slate-200 space-y-4">
+            
+            <div id="badgeResultado" class="p-4 rounded-xl font-medium text-sm"></div>
+
+            <div class="bg-blue-50 border border-blue-200 p-4 rounded-xl">
+                <h3 class="font-bold text-blue-900 text-sm mb-2 flex items-center gap-1">📋 ¿Qué ordenó el juez y en qué plazo?</h3>
+                <ul id="listaOrdenes" class="text-xs text-blue-950 space-y-1.5 list-disc list-inside"></ul>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl">
+                <h3 class="font-bold text-emerald-900 text-sm mb-2 flex items-center gap-1">🚶 Tu Ruta de Acción Inmediata:</h3>
+                <ul id="listaRuta" class="text-xs text-emerald-950 space-y-1.5 list-decimal list-inside"></ul>
+            </div>
+
+            <div class="bg-slate-100 p-4 rounded-xl">
+                <h3 class="font-bold text-slate-800 text-sm mb-2">📖 Glosario Sencillo:</h3>
+                <div id="glosarioText" class="text-xs text-slate-600 space-y-1"></div>
+            </div>
+
+            <p class="text-center text-[11px] text-slate-400 mt-4">
+                📚 Fundamentado en el Decreto 2591 de 1991 y la Sentencia T-262 de 2022 de la Corte Constitucional.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const ejemplos = {
+            1: "PRIMERO: TUTELAR el derecho a la salud de Pedro Gómez. SEGUNDO: ORDENAR a EPS SANITAS que en el término de cuarenta y ocho (48) horas autorice la cirugía y garantice el tratamiento integral. TERCERO: Prevenir sobre sanciones por desacato del artículo 52 del Decreto 2591 de 1991.",
+            2: "PRIMERO: DECLARAR IMPROCEDENTE la acción de tutela instaurada contra Carlos Restrepo por no satisfacer el principio de subsidiariedad al contar con otros mecanismos idóneos en la jurisdicción ordinaria civil.",
+            3: "PRIMERO: DECLARAR la carencia actual de objeto por hecho superado dentro de la tutela contra EPS SURA, toda vez que el medicamento fue suministrado durante el trámite procesal."
+        };
+
+        function cargarEjemplo(num) {
+            document.getElementById('sentenciaInput').value = ejemplos[num];
+        }
+
+        function traducirSentencia() {
+            const texto = document.getElementById('sentenciaInput').value.trim().toLowerCase();
+            if (!texto) {
+                alert("Por favor escribe o pega el texto de una sentencia.");
+                return;
+            }
+
+            const contenedor = document.getElementById('resultadoContainer');
+            const badge = document.getElementById('badgeResultado');
+            const ordenes = document.getElementById('listaOrdenes');
+            const ruta = document.getElementById('listaRuta');
+            const glosario = document.getElementById('glosarioText');
+
+            contenedor.classList.remove('hidden');
+
+            if (texto.includes("hecho superado") || texto.includes("carencia")) {
+                badge.className = "p-4 rounded-xl font-medium text-sm bg-slate-100 text-slate-800 border border-slate-300";
+                badge.innerHTML = "⚪ <strong>Proceso Cerrado (Hecho Superado):</strong> El juez verificó que la entidad ya te entregó lo que pedías antes de salir el fallo.";
+                ordenes.innerHTML = "<li>No hay órdenes nuevas ni sanciones pendientes.</li><li>La vulneración a tu derecho cesó durante el trámite.</li>";
+                ruta.innerHTML = "<li>Guarda copia de este fallo como constancia.</li><li>Si te vuelven a suspender el servicio en el futuro, podrás acudir nuevamente al juez.</li>";
+                glosario.innerHTML = "<strong>Hecho superado:</strong> Cuando la entidad cumple antes de que salga la sentencia y el juez ya no necesita dar órdenes obligatorias.";
+            } else if (texto.includes("improcedente") || texto.includes("subsidiariedad")) {
+                badge.className = "p-4 rounded-xl font-medium text-sm bg-amber-100 text-amber-900 border border-amber-300";
+                badge.innerHTML = "🟡 <strong>Tutela Improcedente (Vía Incorrecta):</strong> El juez no revisó el fondo porque la tutela no es para este tipo de reclamos; debes ir a la justicia ordinaria civil.";
+                ordenes.innerHTML = "<li>No se emitieron órdenes contra el demandado en sede de tutela.</li>";
+                ruta.innerHTML = "<li>Tienes <strong>3 DÍAS HÁBILES</strong> desde la notificación para impugnar si consideras que hubo error.</li><li>Si no impugnas, acude a un consultorio jurídico para presentar la demanda ante un juez civil.</li>";
+                glosario.innerHTML = "<strong>Subsidiariedad:</strong> Regla legal que dice que la tutela solo procede cuando no existe otro juicio o juez ordinario disponible.";
+            } else if (texto.includes("tutelar") || texto.includes("conceder") || texto.includes("amparar")) {
+                badge.className = "p-4 rounded-xl font-medium text-sm bg-emerald-100 text-emerald-900 border border-emerald-300";
+                badge.innerHTML = "🟢 <strong>¡Amparo Concedido! (Ganaste la tutela):</strong> El juez protegió tus derechos y le dio una orden obligatoria a la entidad demandada.";
+                ordenes.innerHTML = "<li>La entidad debe autorizar y cumplir lo solicitado sin dilaciones.</li><li><strong>Plazo máximo:</strong> 48 horas hábiles desde la notificación formal.</li><li>Garantía de tratamiento integral para toda la patología.</li>";
+                ruta.innerHTML = "<li>Lleva copia de este fallo a la oficina o correo de tutelas de la entidad demandada hoy mismo.</li><li>Cuenta 48 horas hábiles. Si no cumplen, acude al juzgado y presenta un <em>Incidente de Desacato</em> (Art. 52 Decreto 2591/91).</li>";
+                glosario.innerHTML = "<strong>Tratamiento integral:</strong> La entidad debe cubrir citas, medicinas y exámenes sin pedirte una tutela nueva cada vez.<br><strong>Incidente de desacato:</strong> Solicitud para que el juez sancione con arresto o multa al directivo de la entidad si incumple.";
+            } else {
+                badge.className = "p-4 rounded-xl font-medium text-sm bg-red-100 text-red-900 border border-red-300";
+                badge.innerHTML = "🔴 <strong>Tutela Negada en Primera Instancia:</strong> El juez consideró que no se probó la vulneración a los derechos fundamentales.";
+                ordenes.innerHTML = "<li>No se emitieron órdenes a favor en esta instancia.</li>";
+                ruta.innerHTML = "<li>¡URGENTE! Tienes <strong>3 DÍAS HÁBILES</strong> para presentar tu escrito de impugnación en el juzgado.</li><li>Si no impugnas, el expediente viajará a la Corte Constitucional para eventual revisión.</li>";
+                glosario.innerHTML = "<strong>Impugnación:</strong> Recurso para pedirle a un juez superior que vuelva a revisar tu caso.<br><strong>Eventual revisión:</strong> Trámite donde la Corte Constitucional escoge solo algunas sentencias del país.";
+            }
+        }
+    </script>
+</body>
+</html>
